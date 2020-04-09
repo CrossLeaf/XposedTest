@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,6 +14,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String TAG = MainActivity.class.getSimpleName();
     private Button btnChange;
     private TextView tvText;
     private String privateStrTest = "This is gg.";
@@ -45,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
         });
 
         setCustomBeanList();
+
+        Log.d(TAG, "onCreate: test private method = " + testPrivateMethod());
     }
 
     @Override
@@ -73,5 +77,9 @@ public class MainActivity extends AppCompatActivity {
         a.setB(333);
         a.setC(true);
         customBeans.add(c);
+    }
+
+    private boolean testPrivateMethod() {
+        return false;
     }
 }
