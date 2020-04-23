@@ -82,4 +82,8 @@ public class MainActivity extends AppCompatActivity {
     private boolean testPrivateMethod() {
         return false;
     }
+
+    public void testCallParamMethod(CustomBean bean) {
+        Log.d(TAG, "testCallParamMethod: a = " + bean.getA());
+    }
 }
